@@ -23,17 +23,14 @@ on:
 #  paths:
 #    - '.config'
 
-#SSH_ACTIONS 开启SSH连接
-#UPLOAD_BIN_DIR上传BIN目录
-#UPLOAD_FIRMWARE上传固件目录
-
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   DIY_SH: OpenWrt-Lean.sh
-  SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
+  SSH_ACTIONS: false        # SSH 连接 Actions 功能
+  UPLOAD_BIN_DIR: true      # 上传 bin 目录。即包含所有 ipk 文件和固件的目录
+  UPLOAD_FIRMWARE: true     # 上传固件的目录
+  UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
 
 jobs:
@@ -96,12 +93,12 @@ jobs:
         make -j$(nproc) || make -j1 V=s
         echo "::set-output name=status::success"
 
-    #- name: 上传BIN目录
-      #uses: actions/upload-artifact@master
-      #if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      #with:
-        #name: OpenWrt-bin-Lean-${{ env.FILENAME }}
-        #path: openwrt/bin
+    - name: 上传BIN目录
+      uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: OpenWrt-bin-Lean-${{ env.FILENAME }}
+        path: openwrt/bin
 
     - name: 整理文件
       id: organize
@@ -113,11 +110,7 @@ jobs:
           find openwrt/bin/targets/ -name "*uefi*img*" | xargs -i mv -f {} ./artifact/
 
     - name: 上传固件
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      uses: actions/upload-artifact@master
       with:
-        tag_name: ${{ env.RELEASE_TAG }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+        name: OpenWrt-firmware-Lean-${{ env.FILENAME }}
+        path: ./artifact/
