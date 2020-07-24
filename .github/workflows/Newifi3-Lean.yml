@@ -77,9 +77,9 @@ jobs:
         ../$DIY_SH
         make defconfig
 
-    - name: 开启SSH远程连接
-      uses: P3TERX/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+    #- name: 开启SSH远程连接
+      #uses: P3TERX/debugger-action@master
+      #if: env.SSH_ACTIONS == 'true'
 
     - name: 下载软件包
       id: package
@@ -96,12 +96,12 @@ jobs:
         make -j$(nproc) || make -j1 V=s
         echo "::set-output name=status::success"
 
-    - name: 上传BIN目录
-      uses: actions/upload-artifact@master
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: OpenWrt-bin-Lean-${{ env.FILENAME }}
-        path: openwrt/bin
+    #- name: 上传BIN目录
+      #uses: actions/upload-artifact@master
+      #if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      #with:
+        #name: OpenWrt-bin-Lean-${{ env.FILENAME }}
+        #path: openwrt/bin
 
     - name: 整理文件
       id: organize
@@ -116,4 +116,4 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: OpenWrt-firmware-Lean-${{ env.FILENAME }}
-        path: ./artifact/
+        path: ./Lean/
