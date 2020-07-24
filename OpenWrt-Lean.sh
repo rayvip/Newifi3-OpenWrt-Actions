@@ -39,7 +39,7 @@ sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /
 sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 
-#创建自定义配置文件 - OpenWrt-x86-64
+#创建自定义配置文件 - OpenWrt
 
 rm -f ./.config*
 touch ./.config
@@ -77,17 +77,17 @@ touch ./.config
 # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
 # 
 
-# 编译x64固件:
+# 编译固件:
 cat >> .config <<EOF
-CONFIG_TARGET_x86=y
-CONFIG_TARGET_x86_64=y
-CONFIG_TARGET_x86_64_Generic=y
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
 EOF
 
 # 设置固件大小:
 cat >> .config <<EOF
-CONFIG_TARGET_KERNEL_PARTSIZE=16
-CONFIG_TARGET_ROOTFS_PARTSIZE=160
+CONFIG_TARGET_KERNEL_PARTSIZE=6
+CONFIG_TARGET_ROOTFS_PARTSIZE=32
 EOF
 
 # 固件压缩:
@@ -95,15 +95,19 @@ cat >> .config <<EOF
 CONFIG_TARGET_IMAGES_GZIP=y
 EOF
 
-# 编译UEFI固件:
-cat >> .config <<EOF
-CONFIG_EFI_IMAGES=y
-EOF
-
 # IPv6支持:
 cat >> .config <<EOF
+CONFIG_IPV6=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
 CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_odhcp6c=y
+CONFIG_PACKAGE_odhcpd-ipv6only=y
+CONFIG_PACKAGE_luci-proto-ipv6=y
+CONFIG_PACKAGE_kmod-ipt-nat6=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_kmod-ip6tables=y
+CONFIG_PACKAGE_kmod-ip6tables-extra=y
+CONFIG_PACKAGE_6in4=y
 EOF
 
 # 多文件系统支持:
@@ -127,10 +131,10 @@ EOF
 
 # 第三方插件选择:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
+#CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
 # CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
-CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
-CONFIG_PACKAGE_luci-app-eqos=y #IP限速
+#CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
+#CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 # CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 EOF
 
@@ -139,48 +143,51 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
 # Passwall插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
-CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-CONFIG_PACKAGE_kcptun-client=y
-CONFIG_PACKAGE_chinadns-ng=y
-CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_v2ray=y
-CONFIG_PACKAGE_v2ray-plugin=y
-CONFIG_PACKAGE_simple-obfs=y
-CONFIG_PACKAGE_trojan=y
-CONFIG_PACKAGE_trojan-go=y
-CONFIG_PACKAGE_brook=y
-CONFIG_PACKAGE_ipt2socks=y
-CONFIG_PACKAGE_shadowsocks-libev-config=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-CONFIG_PACKAGE_pdnsd-alt=y
-CONFIG_PACKAGE_dns2socks=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-passwall=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
+#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
+#CONFIG_PACKAGE_kcptun-client=y
+#CONFIG_PACKAGE_chinadns-ng=y
+#CONFIG_PACKAGE_haproxy=y
+#CONFIG_PACKAGE_v2ray=y
+#CONFIG_PACKAGE_v2ray-plugin=y
+#CONFIG_PACKAGE_simple-obfs=y
+#CONFIG_PACKAGE_trojan=y
+#CONFIG_PACKAGE_trojan-go=y
+#CONFIG_PACKAGE_brook=y
+#CONFIG_PACKAGE_ipt2socks=y
+#CONFIG_PACKAGE_shadowsocks-libev-config=y
+#CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
+#CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
+#CONFIG_PACKAGE_shadowsocksr-libev-alt=y
+#CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
+#CONFIG_PACKAGE_pdnsd-alt=y
+#CONFIG_PACKAGE_dns2socks=y
+#EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
+#CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
+CONFIG_PACKAGE_luci-app-adguardhome=y
+CONFIG_PACKAGE_luci-app-guest-wifi=y
+CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
@@ -235,18 +242,19 @@ EOF
 
 # 常用软件包:
 cat >> .config <<EOF
-CONFIG_PACKAGE_curl=y
-CONFIG_PACKAGE_htop=y
-CONFIG_PACKAGE_nano=y
+#CONFIG_PACKAGE_curl=y
+#CONFIG_PACKAGE_htop=y
+#CONFIG_PACKAGE_nano=y
 # CONFIG_PACKAGE_screen=y
 # CONFIG_PACKAGE_tree=y
 # CONFIG_PACKAGE_vim-fuller=y
-CONFIG_PACKAGE_wget=y
+#CONFIG_PACKAGE_wget=y
 EOF
 
 # 其他软件包:
 cat >> .config <<EOF
-CONFIG_HAS_FPU=y
+CONFIG_PACKAGE_lscpu=y
+#CONFIG_HAS_FPU=y
 EOF
 
 # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
