@@ -113,7 +113,11 @@ jobs:
           find openwrt/bin/targets/ -name "*uefi*img*" | xargs -i mv -f {} ./artifact/
 
     - name: 上传固件
-      uses: actions/upload-artifact@master
+      uses: softprops/action-gh-release@v1
+      if: steps.tag.outputs.status == 'success' && !cancelled()
+      env:
+        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
       with:
-        name: OpenWrt-firmware-Lean-${{ env.FILENAME }}
-        path: ./Lean/
+        tag_name: ${{ env.RELEASE_TAG }}
+        body_path: release.txt
+        files: ${{ env.FIRMWARE }}/*
