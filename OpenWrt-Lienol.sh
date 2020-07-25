@@ -132,52 +132,52 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-# CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
+#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 EOF
 
 # ShadowsocksR插件:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
 # Passwall插件:
 cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-passwall=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-#CONFIG_PACKAGE_kcptun-client=y
-#CONFIG_PACKAGE_chinadns-ng=y
-#CONFIG_PACKAGE_haproxy=y
-#CONFIG_PACKAGE_v2ray=y
-#CONFIG_PACKAGE_v2ray-plugin=y
-#CONFIG_PACKAGE_simple-obfs=y
-#CONFIG_PACKAGE_trojan=y
-#CONFIG_PACKAGE_trojan-go=y
-#CONFIG_PACKAGE_brook=y
-#CONFIG_PACKAGE_ipt2socks=y
-#CONFIG_PACKAGE_shadowsocks-libev-config=y
-#CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-#CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-#CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-#CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-#CONFIG_PACKAGE_pdnsd-alt=y
-#CONFIG_PACKAGE_dns2socks=y
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
+CONFIG_PACKAGE_kcptun-client=y
+CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_haproxy=y
+CONFIG_PACKAGE_v2ray=y
+CONFIG_PACKAGE_v2ray-plugin=y
+CONFIG_PACKAGE_simple-obfs=y
+CONFIG_PACKAGE_trojan=y
+CONFIG_PACKAGE_trojan-go=y
+CONFIG_PACKAGE_brook=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_shadowsocks-libev-config=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
+CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
+CONFIG_PACKAGE_shadowsocksr-libev-alt=y
+CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
+CONFIG_PACKAGE_pdnsd-alt=y
+CONFIG_PACKAGE_dns2socks=y
 EOF
 
 # 常用LuCI插件:
@@ -200,20 +200,20 @@ CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
 CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
-# CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
-# CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
-# CONFIG_PACKAGE_luci-app-smartdns is not set #smartdnsDNS服务
-# CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
-# CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
-# CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
-CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini #解锁网易云灰色歌曲
-# CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
-# CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-# CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
-# CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
-# CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
-# CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
+#CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
+#CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
+CONFIG_PACKAGE_luci-app-smartdns #smartdnsDNS服务
+#CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardHome去广告服务
+CONFIG_PACKAGE_luci-app-unblockmusic #解锁网易云灰色歌曲
+#CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
+#CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini #解锁网易云灰色歌曲
+#CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
+#CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
+#CONFIG_PACKAGE_luci-app-mwan3helper is not set #多拨负载均衡
+#CONFIG_PACKAGE_luci-app-mwan3 is not set #多线多拨
+#CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+#CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
+#CONFIG_PACKAGE_luci-app-zerotier is not set #Zerotier内网穿透
 CONFIG_PACKAGE_luci-app-sqm #SQM智能队列管理
 #
 # passwall相关(禁用):
