@@ -145,16 +145,16 @@ EOF
 
 # ShadowsocksR插件:
 cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-ssr-plus=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
 # Passwall插件:
 #cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-passwall=y
+#CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
