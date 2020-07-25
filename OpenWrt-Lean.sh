@@ -202,17 +202,17 @@ CONFIG_PACKAGE_luci-app-accesscontrol=y #上网时间控制
 CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
-CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
-# CONFIG_PACKAGE_luci-app-flowoffload is not set #开源 Linux Flow Offload 驱动
-# CONFIG_PACKAGE_luci-app-haproxy-tcp is not set #Haproxy负载均衡
-# CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
-# CONFIG_PACKAGE_luci-app-transmission is not set #TR离线下载
-# CONFIG_PACKAGE_luci-app-qbittorrent is not set #QB离线下载
-# CONFIG_PACKAGE_luci-app-amule is not set #电驴离线下载
-# CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
-# CONFIG_PACKAGE_luci-app-zerotier is not set #zerotier内网穿透
-# CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-# CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
+#CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
+CONFIG_PACKAGE_luci-app-flowoffload #开源 Linux Flow Offload 驱动
+#CONFIG_PACKAGE_luci-app-haproxy-tcp is not set #Haproxy负载均衡
+#CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
+#CONFIG_PACKAGE_luci-app-transmission is not set #TR离线下载
+#CONFIG_PACKAGE_luci-app-qbittorrent is not set #QB离线下载
+#CONFIG_PACKAGE_luci-app-amule is not set #电驴离线下载
+#CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
+#CONFIG_PACKAGE_luci-app-zerotier is not set #zerotier内网穿透
+#CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
+#CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
 CONFIG_PACKAGE_luci-app-unblockmusic #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
