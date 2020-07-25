@@ -95,6 +95,11 @@ cat >> .config <<EOF
 CONFIG_TARGET_IMAGES_GZIP=y
 EOF
 
+# 编译UEFI固件:
+#cat >> .config <<EOF
+#CONFIG_EFI_IMAGES=y
+#EOF
+
 # IPv6支持:
 cat >> .config <<EOF
 CONFIG_IPV6=y
@@ -132,24 +137,24 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-# CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-# CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 EOF
 
 # ShadowsocksR插件:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
 EOF
 
 # Passwall插件:
 #cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
@@ -185,7 +190,6 @@ EOF
 # 常用LuCI插件:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
-CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
@@ -209,11 +213,11 @@ CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 # CONFIG_PACKAGE_luci-app-zerotier is not set #zerotier内网穿透
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
 # CONFIG_PACKAGE_luci-app-wrtbwmon is not set #实时流量监测
-# CONFIG_PACKAGE_luci-app-unblockmusic is not set #解锁网易云灰色歌曲
+CONFIG_PACKAGE_luci-app-unblockmusic #解锁网易云灰色歌曲
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
 # CONFIG_PACKAGE_luci-app-usb-printer is not set #USB打印机
-#CONFIG_PACKAGE_luci-app-sqm is not set #SQM智能队列管理
+CONFIG_PACKAGE_luci-app-sqm #SQM智能队列管理
 #
 # VPN相关插件(禁用):
 #
@@ -235,9 +239,9 @@ EOF
 # LuCI主题:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-theme-atmaterial=y
-CONFIG_PACKAGE_luci-theme-argon_new=y
-CONFIG_PACKAGE_luci-theme-netgear=y
-CONFIG_PACKAGE_luci-theme-edge=y
+#CONFIG_PACKAGE_luci-theme-argon_new=y
+#CONFIG_PACKAGE_luci-theme-netgear=y
+#CONFIG_PACKAGE_luci-theme-edge=y
 EOF
 
 # 常用软件包:
@@ -245,9 +249,9 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_curl=y
 #CONFIG_PACKAGE_htop=y
 #CONFIG_PACKAGE_nano=y
-# CONFIG_PACKAGE_screen=y
-# CONFIG_PACKAGE_tree=y
-# CONFIG_PACKAGE_vim-fuller=y
+#CONFIG_PACKAGE_screen=y
+#CONFIG_PACKAGE_tree=y
+#CONFIG_PACKAGE_vim-fuller=y
 #CONFIG_PACKAGE_wget=y
 EOF
 
