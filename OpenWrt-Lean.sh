@@ -22,9 +22,9 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
-rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
-rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome package/openwrt-packages/adguardhome
-rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
+#rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
+#rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome package/openwrt-packages/adguardhome
+#rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
 
 # 添加passwall依赖库
 git clone https://github.com/kenzok8/small package/small
