@@ -27,7 +27,7 @@ rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/
 rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
 
 # 添加passwall依赖库
-# git clone https://github.com/kenzok8/small package/small
+git clone https://github.com/kenzok8/small package/small
 svn co https://github.com/Lienol/openwrt-package/trunk/package package/small
 
 # 替换更新haproxy默认版本
