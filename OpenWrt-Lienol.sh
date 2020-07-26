@@ -5,6 +5,7 @@ cd openwrt
 
 # 安装额外依赖软件包
 # sudo -E apt-get -y install rename
+ln -s ../../diy ./package/openwrt-packages
 
 # 更新feeds文件
 # sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
@@ -16,7 +17,6 @@ cat feeds.conf.default
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加第三方软件包
-ln -s ../../diy ./package/openwrt-packages
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
