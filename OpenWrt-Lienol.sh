@@ -26,6 +26,7 @@ rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/L
 rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome
 rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome
+rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
