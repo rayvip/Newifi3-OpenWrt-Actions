@@ -24,9 +24,9 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
-rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome package/openwrt-packages/adguardhome
-rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
-rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash package/openwrt-packages/luci-app-clash
+#rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome package/openwrt-packages/adguardhome
+#rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
+#rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash package/openwrt-packages/luci-app-clash
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
@@ -36,10 +36,6 @@ sed -i 's#option commit_interval 24h#option commit_interval 10m#g' feeds/package
 sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
-
-# 删除插件
-#rm -rf package/openwrt-packages/adguardhome
-#rm -rf package/openwrt-packages/luci-app-adguardhome
 
 # 创建自定义配置文件 - OpenWrt
 
@@ -282,7 +278,7 @@ EOF
 # 其他软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_lscpu=y
-#CONFIG_HAS_FPU=y
+CONFIG_HAS_FPU=y
 EOF
 
 # 
