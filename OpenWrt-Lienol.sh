@@ -255,9 +255,9 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
-CONFIG_PACKAGE_luci-theme-argon-light-mod=y
-CONFIG_PACKAGE_luci-theme-bootstrap=y
+CONFIG_PACKAGE_luci-theme-argon-dark-mod=n
+CONFIG_PACKAGE_luci-theme-argon-light-mod=n
+CONFIG_PACKAGE_luci-theme-bootstrap=n
 CONFIG_PACKAGE_luci-theme-edge=y
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
@@ -271,18 +271,18 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_curl=y
 #CONFIG_PACKAGE_htop=y
 #CONFIG_PACKAGE_nano=y
-# CONFIG_PACKAGE_screen=y
-# CONFIG_PACKAGE_tree=y
-# CONFIG_PACKAGE_vim-fuller=y
-CONFIG_PACKAGE_wget=y
-CONFIG_PACKAGE_bash=y
+#CONFIG_PACKAGE_screen=y
+#CONFIG_PACKAGE_tree=y
+#CONFIG_PACKAGE_vim-fuller=y
+#CONFIG_PACKAGE_wget=y
+#CONFIG_PACKAGE_bash=y
 #CONFIG_PACKAGE_node=y
 EOF
 
 # 其他软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_lscpu=y
-#CONFIG_HAS_FPU=y
+CONFIG_HAS_FPU=y
 EOF
 
 # 
