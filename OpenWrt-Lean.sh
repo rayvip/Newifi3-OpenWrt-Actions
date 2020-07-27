@@ -28,11 +28,11 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 #rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
 
 # 添加passwall依赖库
-git clone https://github.com/kenzok8/small package/small
-svn co https://github.com/Lienol/openwrt-package/trunk/package package/small
+#git clone https://github.com/kenzok8/small package/small
+svn co https://github.com/Lienol/openwrt-package/package package/small
 
 # 替换更新haproxy默认版本
-rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/trunk/net/haproxy feeds/packages/net/haproxy
+#rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/net/haproxy feeds/packages/net/haproxy
 
 # 自定义定制选项
 sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
