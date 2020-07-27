@@ -254,10 +254,10 @@ EOF
 
 # LuCI主题:
 cat >> .config <<EOF
-CONFIG_PACKAGE_luci-theme-argon-dark-mod=n
+CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
 CONFIG_PACKAGE_luci-theme-argon-light-mod=n
 CONFIG_PACKAGE_luci-theme-bootstrap=n
-CONFIG_PACKAGE_luci-theme-edge=y
+CONFIG_PACKAGE_luci-theme-edge=n
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-freifunk-generic is not set
