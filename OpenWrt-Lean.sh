@@ -41,8 +41,8 @@ sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #
 #sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 #sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 #sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
-sed -i 's/config internal themes/config internal themes\n    option atmaterial  \"\/luci-static\/atmaterial\"/g' feeds/luci/modules/luci-base/root/etc/config/luci #修改默认主题
-sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap #去除默认bootstrap主题
+#sed -i 's/config internal themes/config internal themes\n    option atmaterial  \"\/luci-static\/atmaterial\"/g' feeds/luci/modules/luci-base/root/etc/config/luci #修改默认主题
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap #去除默认bootstrap主题
 
 #创建自定义配置文件 - OpenWrt
 
@@ -197,6 +197,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 #CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-app-clash=y
 CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
