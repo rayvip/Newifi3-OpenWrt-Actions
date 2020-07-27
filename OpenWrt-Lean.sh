@@ -272,13 +272,13 @@ EOF
 
 # 常用软件包:
 cat >> .config <<EOF
-#CONFIG_PACKAGE_curl=y
-#CONFIG_PACKAGE_htop=y
-#CONFIG_PACKAGE_nano=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_htop=y
+CONFIG_PACKAGE_nano=y
 #CONFIG_PACKAGE_screen=y
 #CONFIG_PACKAGE_tree=y
 #CONFIG_PACKAGE_vim-fuller=y
-#CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_wget=y
 EOF
 
 # 其他软件包:
