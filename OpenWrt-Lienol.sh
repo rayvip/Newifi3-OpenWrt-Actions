@@ -5,7 +5,7 @@ cd openwrt
 
 # 安装额外依赖软件包
 # sudo -E apt-get -y install rename
-ln -s ../../diy ./package/openwrt-packages
+#ln -s ../../diy ./package/openwrt-packages
 
 # 更新feeds文件
 # sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
@@ -37,8 +37,8 @@ sed -i 's#192.168.1.1#10.0.0.1#g' package/base-files/files/bin/config_generate #
 #sed -i 's#option database_directory /var/lib/nlbwmon#option database_directory /etc/config/nlbwmon_data#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计数据存放默认位置
 #sed -i 's@background-color: #e5effd@background-color: #f8fbfe@g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
 #sed -i 's#rgba(223, 56, 18, 0.04)#rgba(223, 56, 18, 0.02)#g' package/luci-theme-edge/htdocs/luci-static/edge/cascade.css #luci-theme-edge主题颜色微调
-sed -i 's/config internal themes/config internal themes\n    option edge  \"\/luci-static\/edge\"/g' feeds/luci/modules/luci-base/root/etc/config/luci #修改默认主题
-sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap #去除默认bootstrap主题
+#sed -i 's/config internal themes/config internal themes\n    option edge  \"\/luci-static\/edge\"/g' feeds/luci/modules/luci-base/root/etc/config/luci #修改默认主题
+#sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap #去除默认bootstrap主题
 
 # 创建自定义配置文件 - OpenWrt
 
