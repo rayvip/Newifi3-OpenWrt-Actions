@@ -96,15 +96,15 @@ CONFIG_TARGET_ARCH_PACKAGES="mipsel_24kc"
 EOF
 
 # 设置固件大小:
-cat >> .config <<EOF
-CONFIG_TARGET_KERNEL_PARTSIZE=6
-CONFIG_TARGET_ROOTFS_PARTSIZE=32
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_KERNEL_PARTSIZE=6
+#CONFIG_TARGET_ROOTFS_PARTSIZE=32
+#EOF
 
 # 固件压缩:
-cat >> .config <<EOF
-CONFIG_TARGET_IMAGES_GZIP=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_IMAGES_GZIP=y
+#EOF
 
 # 编译UEFI固件:
 #cat >> .config <<EOF
@@ -217,7 +217,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 #CONFIG_PACKAGE_luci-app-clash=y
-#CONFIG_PACKAGE_luci-app-webadmin=y #Web管理页面设置
+CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
 CONFIG_DEFAULT_luci-app-vlmcsd=y #KMS激活服务器
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
