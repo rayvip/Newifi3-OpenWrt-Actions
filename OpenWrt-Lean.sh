@@ -29,7 +29,7 @@ git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
 # 添加passwall依赖库
 #git clone https://github.com/kenzok8/small package/small
-svn co https://github.com/Lienol/openwrt-package/tree/master/package package/small
+#svn co https://github.com/Lienol/openwrt-package/tree/master/package package/small
 
 # 替换更新haproxy默认版本
 #rm -rf feeds/packages/net/haproxy && svn co https://github.com/Lienol/openwrt-packages/net/haproxy feeds/packages/net/haproxy
