@@ -92,15 +92,15 @@ CONFIG_TARGET_ARCH_PACKAGES="mipsel_24kc"
 EOF
 
 # 设置固件大小:
-cat >> .config <<EOF
-CONFIG_TARGET_KERNEL_PARTSIZE=6
-CONFIG_TARGET_ROOTFS_PARTSIZE=32
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_KERNEL_PARTSIZE=6
+#CONFIG_TARGET_ROOTFS_PARTSIZE=32
+#EOF
 
 # 固件压缩:
-cat >> .config <<EOF
-CONFIG_TARGET_IMAGES_GZIP=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_TARGET_IMAGES_GZIP=y
+#EOF
 
 # 编译UEFI固件:
 #cat >> .config <<EOF
@@ -223,7 +223,7 @@ CONFIG_PACKAGE_luci-app-control-mia=y #时间控制
 CONFIG_PACKAGE_luci-app-control-timewol=y #定时唤醒
 CONFIG_PACKAGE_luci-app-control-webrestriction=y #访问限制
 CONFIG_PACKAGE_luci-app-control-weburl=y #网址过滤
-#CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
+CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 CONFIG_PACKAGE_luci-app-flowoffload=y #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
