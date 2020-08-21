@@ -163,15 +163,15 @@ cat >> .config <<EOF
 EOF
 
 # ShadowsocksR插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+#EOF
 
 # Passwall插件:
-#cat >> .config <<EOF
+cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
@@ -193,7 +193,7 @@ CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_v2ray-plugin=y
 #CONFIG_PACKAGE_simple-obfs=y
 #CONFIG_PACKAGE_trojan=y
-#CONFIG_PACKAGE_trojan-go=y
+#CONFIG_PACKAGE_trojan-go=n
 #CONFIG_PACKAGE_brook=y
 #CONFIG_PACKAGE_ipt2socks=y
 #CONFIG_PACKAGE_shadowsocks-libev-config=y
@@ -203,7 +203,7 @@ CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 #CONFIG_PACKAGE_pdnsd-alt=y
 #CONFIG_PACKAGE_dns2socks=y
-#EOF
+EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
