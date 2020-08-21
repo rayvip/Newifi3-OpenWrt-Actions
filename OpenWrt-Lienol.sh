@@ -172,7 +172,7 @@ EOF
 
 # Passwall插件:
 #cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
@@ -227,7 +227,7 @@ CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-sfe=y #高通开源的 Shortcut FE 转发加速引擎
 #CONFIG_PACKAGE_luci-app-flowoffload=n #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
-CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
+#CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
 #CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
 CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
