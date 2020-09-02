@@ -277,7 +277,7 @@ CONFIG_PACKAGE_luci-theme-atmaterial=n
 CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
 CONFIG_PACKAGE_luci-theme-argon-light-mod=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
-CONFIG_PACKAGE_luci-theme-edge=y
+CONFIG_PACKAGE_luci-theme-edge=n
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-freifunk-generic is not set
