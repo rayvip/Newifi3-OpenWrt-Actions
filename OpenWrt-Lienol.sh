@@ -9,7 +9,7 @@ cd openwrt
 
 # 更新feeds文件
 # sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
-#sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-18.06#g' feeds.conf.default #更换luci版本
+sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-18.06#g' feeds.conf.default #更换luci版本
 cat feeds.conf.default
 
 # 更新并安装源
@@ -163,16 +163,16 @@ cat >> .config <<EOF
 EOF
 
 # ShadowsocksR插件:
-#cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-ssr-plus=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-#EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+EOF
 
 # Passwall插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-passwall=y
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
 #CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
@@ -203,14 +203,14 @@ CONFIG_PACKAGE_luci-app-passwall=y
 #CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
 #CONFIG_PACKAGE_pdnsd-alt=y
 #CONFIG_PACKAGE_dns2socks=y
-EOF
+#EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 #CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-ttyd=y
-#CONFIG_PACKAGE_luci-app-clash=y
+CONFIG_PACKAGE_luci-app-clash=y
 CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
