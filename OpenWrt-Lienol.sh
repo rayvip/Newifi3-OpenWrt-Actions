@@ -163,12 +163,12 @@ cat >> .config <<EOF
 EOF
 
 # ShadowsocksR插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-ssr-plus=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+#EOF
 
 # Passwall插件:
 #cat >> .config <<EOF
@@ -274,10 +274,10 @@ EOF
 # LuCI主题:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-theme-atmaterial=n
-CONFIG_PACKAGE_luci-theme-argon-dark-mod=n
+CONFIG_PACKAGE_luci-theme-argon-dark-mod=y
 CONFIG_PACKAGE_luci-theme-argon-light-mod=n
-CONFIG_PACKAGE_luci-theme-bootstrap=y
-CONFIG_PACKAGE_luci-theme-edge=n
+#CONFIG_PACKAGE_luci-theme-bootstrap=y
+#CONFIG_PACKAGE_luci-theme-edge=n
 # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
 # CONFIG_PACKAGE_luci-theme-darkmatter is not set
 # CONFIG_PACKAGE_luci-theme-freifunk-generic is not set
