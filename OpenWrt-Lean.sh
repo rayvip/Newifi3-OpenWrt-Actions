@@ -268,6 +268,7 @@ CONFIG_PACKAGE_luci-theme-atmaterial=y
 #CONFIG_PACKAGE_luci-theme-argon_new=y
 #CONFIG_PACKAGE_luci-theme-netgear=y
 #CONFIG_PACKAGE_luci-theme-edge=y
+CONFIG_PACKAGE_luci-theme-material=y
 EOF
 
 # 常用软件包:
