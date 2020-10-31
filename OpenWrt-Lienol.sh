@@ -8,8 +8,8 @@ cd openwrt
 #ln -s ../../diy ./package/openwrt-packages
 
 # 更新feeds文件
-# sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
-sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-19.07#g' feeds.conf.default #更换luci版本
+#sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
+#sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;dev-19.07#g' feeds.conf.default #更换luci版本
 cat feeds.conf.default
 
 # 更新并安装源
