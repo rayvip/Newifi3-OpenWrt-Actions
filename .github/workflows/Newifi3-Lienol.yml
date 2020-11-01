@@ -25,7 +25,7 @@ on:
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: dev-19.07
+  REPO_BRANCH: 19.07
   DIY_SH: OpenWrt-Lienol.sh
   SSH_ACTIONS: false        # SSH 连接 Actions 功能
   UPLOAD_BIN_DIR: true      # 上传 bin 目录。即包含所有 ipk 文件和固件的目录
@@ -37,7 +37,7 @@ jobs:
   build_openwrt:
     name: 编译OpenWrt固件
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: 校验本地文件
