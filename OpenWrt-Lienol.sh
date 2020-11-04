@@ -18,9 +18,9 @@ cat feeds.conf.default
 
 # 添加第三方软件包
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
-git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
-git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
+#git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+#git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+#git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
@@ -230,7 +230,7 @@ CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-flowoffload=n #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 #CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
-#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
 CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini #解锁网易云灰色歌曲
