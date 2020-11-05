@@ -10,7 +10,7 @@ cd openwrt
 # 更新feeds文件
 #sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
 #sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-package' feeds.conf.default
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;19.07#g' feeds.conf.default #更换luci版本
 cat feeds.conf.default
 
