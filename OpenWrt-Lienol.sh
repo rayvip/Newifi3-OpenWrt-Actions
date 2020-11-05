@@ -231,6 +231,7 @@ CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 #CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+CONFIG_PACKAGE_AdGuardHome=y
 CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini #解锁网易云灰色歌曲
