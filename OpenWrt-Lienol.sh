@@ -9,8 +9,8 @@ cd openwrt
 
 # 更新feeds文件
 #sed -i 's#lienol https://github.com/Lienol/openwrt-package#lienol https://github.com/db-one/Lienol-openwrt-package#g' feeds.conf.default #更换默认包源
-sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-package' feeds.conf.default
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+#sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-package' feeds.conf.default
+#sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i 's#src-git luci https://github.com/Lienol/openwrt-luci.git;17.01#src-git luci https://github.com/Lienol/openwrt-luci.git;19.07#g' feeds.conf.default #更换luci版本
 cat feeds.conf.default
 
@@ -19,7 +19,7 @@ cat feeds.conf.default
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
 # 添加第三方软件包
-git clone https://github.com/xiaorouji/openwrt-packags package/openwrt-packages
+#git clone https://github.com/xiaorouji/openwrt-packag package/openwrt-packages
 git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
