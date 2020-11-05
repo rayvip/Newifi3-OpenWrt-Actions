@@ -162,6 +162,8 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
+CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
@@ -230,8 +232,6 @@ CONFIG_PACKAGE_luci-app-nlbwmon=n #宽带流量监控
 #CONFIG_PACKAGE_luci-app-flowoffload=n #开源 Linux Flow Offload 驱动
 #CONFIG_PACKAGE_luci-app-diskman is not set #磁盘管理磁盘信息
 #CONFIG_PACKAGE_luci-app-smartdns=y #smartdnsDNS服务
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-CONFIG_PACKAGE_AdGuardHome=y
 CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-go is not set #解锁网易云灰色歌曲
 #CONFIG_PACKAGE_luci-app-unblockneteasemusic-mini #解锁网易云灰色歌曲
