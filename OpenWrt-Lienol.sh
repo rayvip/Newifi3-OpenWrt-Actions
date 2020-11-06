@@ -166,7 +166,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-CONFIG_PACKAGE_AdGuardHome=y
+#CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
