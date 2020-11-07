@@ -31,6 +31,9 @@ env:
   UPLOAD_BIN_DIR: true      # 上传 bin 目录。即包含所有 ipk 文件和固件的目录
   UPLOAD_FIRMWARE: true     # 上传固件的目录
   UPLOAD_RELEASE: false
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  SCKEY: ${{ secrets.WEIXIN_SCKEY }}
+  GITHUB_RELEASE: https://github.com/gbaoye/OpenWrt-Actions-Lean-Lienol/releases
   TZ: Asia/Shanghai
 
 jobs:
@@ -122,16 +125,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        name: ${{ env.FILE_DATE1 }} 「 ${{ env.WXFB_MESSAGE }} 」固件
-        tag_name: ${{ env.FILE_DATE2 }}-${{matrix.target}}
-        body: |            
-            ☆  源码 : ${{ env.REPO_URL }}
-            ☆  分支 : ${{ env.REPO_BRANCH }}
-            ☆  感谢源码作者无私分享！
-            
-            🎉 [ ${{ env.WXFB_MESSAGE }} ]固件下载 ✨
-            
-            
+        name: OpenWrt_firmware_Lean${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        tag_name: OpenWrt_firmware_Lean${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         files: ./artifact/firmware/*
 
     - name: 删除已发布的老固件
