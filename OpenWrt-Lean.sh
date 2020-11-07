@@ -294,7 +294,7 @@ EOF
 # 其他软件包:
 cat >> .config <<EOF
 CONFIG_PACKAGE_lscpu=y
-CONFIG_HAS_FPU=y
+#CONFIG_HAS_FPU=y
 EOF
 
 # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
