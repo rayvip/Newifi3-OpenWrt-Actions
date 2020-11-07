@@ -115,36 +115,3 @@ jobs:
       with:
         name: OpenWrt_firmware_Lienol${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
-
-    - name: 自动发布固件到 Releases
-      uses: softprops/action-gh-release@v1
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-      with:
-        name: ${{ env.FILE_DATE1 }} 「 ${{ env.WXFB_MESSAGE }} 」固件
-        tag_name: ${{ env.FILE_DATE2 }}-${{matrix.target}}
-        body: |            
-            ☆  源码 : ${{ env.REPO_URL }}
-            ☆  分支 : ${{ env.REPO_BRANCH }}
-            ☆  感谢源码作者无私分享！
-            
-            🎉 [ ${{ env.WXFB_MESSAGE }} ]固件下载 ✨
-            
-            
-        files: ./artifact/firmware/*
-
-    - name: 删除已发布的老固件
-      uses: c-hive/gha-remove-artifacts@v1
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true'
-      with:
-        age: '3 day'   #删除多少天前的旧固件
-
-    - name: 删除自动发布的老固件
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
-      with:
-        keep_latest: 12         #保留多少个发布不删除
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
