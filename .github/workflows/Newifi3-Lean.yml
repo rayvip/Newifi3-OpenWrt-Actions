@@ -31,9 +31,6 @@ env:
   UPLOAD_BIN_DIR: true      # 上传 bin 目录。即包含所有 ipk 文件和固件的目录
   UPLOAD_FIRMWARE: true     # 上传固件的目录
   UPLOAD_RELEASE: false
-  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-  SCKEY: ${{ secrets.WEIXIN_SCKEY }}
-  GITHUB_RELEASE: https://github.com/gbaoye/OpenWrt-Actions-Lean-Lienol/releases
   TZ: Asia/Shanghai
 
 jobs:
@@ -118,28 +115,3 @@ jobs:
       with:
         name: OpenWrt_firmware_Lean${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
-
-    - name: 自动发布固件到 Releases
-      uses: softprops/action-gh-release@v1
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-      with:
-        name: OpenWrt_firmware_Lean${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        tag_name: OpenWrt_firmware_Lean${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
-        files: ./artifact/firmware/*
-
-    - name: 删除已发布的老固件
-      uses: c-hive/gha-remove-artifacts@v1
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true'
-      with:
-        age: '3 day'   #删除多少天前的旧固件
-
-    - name: 删除自动发布的老固件
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: steps.organizer.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
-      with:
-        keep_latest: 12         #保留多少个发布不删除
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
