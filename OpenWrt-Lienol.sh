@@ -35,7 +35,7 @@ git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash package/openwrt-packages/luci-app-clash
 
 # 自定义定制选项
-sed -i 's#192.168.1.1#10.3.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
+sed -i 's#192.168.1.1#10.1.0.1#g' package/base-files/files/bin/config_generate #定制默认IP
 #sed -i 's#max-width:200px#max-width:1000px#g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm #修改首页样式
 #sed -i 's#max-width:200px#max-width:1000px#g' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index_x86.htm #修改X86首页样式
 #sed -i 's#option commit_interval 24h#option commit_interval 10m#g' feeds/packages/net/nlbwmon/files/nlbwmon.config #修改流量统计写入为10分钟
@@ -168,7 +168,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-#CONFIG_PACKAGE_AdGuardHome=y
+CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
@@ -218,7 +218,7 @@ EOF
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 CONFIG_PACKAGE_luci-app-guest-wifi=y
-CONFIG_PACKAGE_luci-app-ttyd=y
+#CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-app-clash=y
 CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
