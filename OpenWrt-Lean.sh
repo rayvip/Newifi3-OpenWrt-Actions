@@ -24,8 +24,8 @@ cat feeds.conf.default
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
@@ -173,7 +173,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
