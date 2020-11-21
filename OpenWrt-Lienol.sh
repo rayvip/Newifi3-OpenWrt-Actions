@@ -20,18 +20,18 @@ cat feeds.conf.default
 
 # 添加第三方软件包
 #git clone https://github.com/xiaorouji/openwrt-package package/openwrt-packages
-#git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 #git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
 #rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 #rm -rf package/openwrt-packages/adguardhome && svn co https://github.com/Lienol/openwrt/tree/dev-19.07/package/diy/adguardhome package/openwrt-packages/adguardhome
-#rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/kongfl888/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
+rm -rf package/openwrt-packages/luci-app-adguardhome && svn co https://github.com/kongfl888/luci-app-adguardhome package/openwrt-packages/luci-app-adguardhome
 #rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash package/openwrt-packages/luci-app-clash
 
 # 自定义定制选项
@@ -113,17 +113,17 @@ EOF
 #EOF
 
 # 无线驱动
-cat >> .config <<EOF
-CONFIG_PACKAGE_wireless-regdb=y
-CONFIG_PACKAGE_kmod-cfg80211=y
-CONFIG_PACKAGE_kmod-mac80211=y
-CONFIG_PACKAGE_MAC80211_DEBUGFS=y
-CONFIG_PACKAGE_MAC80211_MESH=y
-CONFIG_PACKAGE_kmod-7615d=y
-CONFIG_PACKAGE_luci-app-mtwifi=y
-CONFIG_PACKAGE_wpad-openssl=y
-CONFIG_PACKAGE_wpa-supplicant=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_wireless-regdb=y
+#CONFIG_PACKAGE_kmod-cfg80211=y
+#CONFIG_PACKAGE_kmod-mac80211=y
+#CONFIG_PACKAGE_MAC80211_DEBUGFS=y
+#CONFIG_PACKAGE_MAC80211_MESH=y
+#CONFIG_PACKAGE_kmod-7615d=y
+#CONFIG_PACKAGE_luci-app-mtwifi=y
+#CONFIG_PACKAGE_wpad-openssl=y
+#CONFIG_PACKAGE_wpa-supplicant=y
+#EOF
 
 # IPv6支持:
 cat >> .config <<EOF
@@ -168,7 +168,7 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
-CONFIG_PACKAGE_AdGuardHome=y
+#CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
