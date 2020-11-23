@@ -113,21 +113,22 @@ EOF
 #EOF
 
 # 无线驱动
-#cat >> .config <<EOF
-#CONFIG_PACKAGE_wireless-regdb=y
-#CONFIG_PACKAGE_kmod-cfg80211=y
-#CONFIG_PACKAGE_kmod-mac80211=y
-#CONFIG_PACKAGE_MAC80211_DEBUGFS=y
-#CONFIG_PACKAGE_MAC80211_MESH=y
-#use opensource wifi driver
-#CONFIG_PACKAGE_kmod-mt7603=y
-#CONFIG_PACKAGE_kmod-mt7603e=n
-#CONFIG_PACKAGE_kmod-mt76x2=y
-#CONFIG_PACKAGE_kmod-mt76x2-common=y
-#CONFIG_PACKAGE_kmod-mt76x2e=n
-#CONFIG_PACKAGE_wpad-openssl=y
-#CONFIG_PACKAGE_wpa-supplicant=y
-#EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_wireless-regdb=y
+CONFIG_PACKAGE_kmod-cfg80211=y
+CONFIG_PACKAGE_kmod-mac80211=y
+CONFIG_PACKAGE_MAC80211_DEBUGFS=y
+CONFIG_PACKAGE_MAC80211_MESH=y
+# use opensource wifi driver
+CONFIG_PACKAGE_kmod-mt7603=y
+CONFIG_PACKAGE_kmod-mt7603e=n
+CONFIG_PACKAGE_kmod-mt76x2=y
+CONFIG_PACKAGE_kmod-mt76x2-common=y
+CONFIG_PACKAGE_kmod-mt76x2e=n
+CONFIG_PACKAGE_wpad-openssl=y
+CONFIG_PACKAGE_wpa-supplicant=y
+CONFIG_PACKAGE_luci-app-mtwifi=y
+EOF
 
 # IPv6支持:
 cat >> .config <<EOF
@@ -223,7 +224,6 @@ cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-adbyby-plus=y #adbyby去广告
 CONFIG_PACKAGE_luci-app-guest-wifi=y
 CONFIG_PACKAGE_luci-app-ttyd=y
-#CONFIG_PACKAGE_luci-app-mtwifi=n
 #CONFIG_PACKAGE_luci-app-clash=y
 CONFIG_PACKAGE_luci-app-webadmin=n #Web管理页面设置
 CONFIG_PACKAGE_luci-app-ddns=y #DDNS服务
