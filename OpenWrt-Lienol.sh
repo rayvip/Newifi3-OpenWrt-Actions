@@ -18,13 +18,17 @@ cat feeds.conf.default
 ./scripts/feeds clean
 ./scripts/feeds update -a && ./scripts/feeds install -a
 
+# 删除软件包
+rm -rf ./package/diy/adguardhome
+rm -rf ./package/diy/luci-app-adguardhome
+
 # 添加第三方软件包
 #git clone https://github.com/xiaorouji/openwrt-package package/openwrt-packages
 #git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-#git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 git clone https://github.com/yuos-bit/luci-app-openclash package/luci-app-openclash
 
@@ -160,7 +164,7 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
+CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardHome去广告服务
 #CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
