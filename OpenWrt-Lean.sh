@@ -25,6 +25,7 @@ cat feeds.conf.default
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+git clone https://github.com/yuos-bit/luci-app-openclash package/luci-app-openclash
 #git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 
 # 替换更新插件
@@ -134,18 +135,16 @@ EOF
 # IPv6支持:
 cat >> .config <<EOF
 CONFIG_IPV6=y
-CONFIG_PACKAGE_kmod-ipt-nat6=y
-CONFIG_PACKAGE_kmod-ip6tables-extra=y
-CONFIG_PACKAGE_kmod-nf-nat6=y
-CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-CONFIG_PACKAGE_ip6tables=y
 CONFIG_PACKAGE_ipv6helper=y
 CONFIG_PACKAGE_odhcp6c=y
-CONFIG_PACKAGE_odhcp6c_ext_cer_id=0
 CONFIG_PACKAGE_odhcpd-ipv6only=y
-CONFIG_PACKAGE_odhcpd_ipv6only_ext_cer_id=0
 CONFIG_PACKAGE_luci-proto-ipv6=y
+CONFIG_PACKAGE_kmod-ipt-nat6=y
+CONFIG_PACKAGE_ipv6helper=y
+CONFIG_PACKAGE_kmod-ip6tables=y
+CONFIG_PACKAGE_kmod-ip6tables-extra=y
+CONFIG_PACKAGE_6in4=y
 EOF
 
 # 多文件系统支持:
@@ -170,7 +169,7 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
 CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
