@@ -4,7 +4,7 @@ name: Newifi3-KFERMercer
 on:
 # 定时触发
   schedule:
-    - cron: 10 09 * * *
+    - cron: 0 */72 * * *
 
 # release触发
   release:
