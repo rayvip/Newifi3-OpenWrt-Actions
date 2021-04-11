@@ -29,8 +29,12 @@ rm -rf ./package/diy/luci-app-adguardhome
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
 git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
-git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-openclash package/luci-app-openclash
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-openclash package/luci-app-openclash
+
+# 下载自定义软件
+svn co https://github.com/frainzy1477/luci-app-clash package/luci-app-clash ../lean/luci-app-clash
+svn co https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-openclash ../lean/luci-app-openclash
 
 # 替换更新插件
 #rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
