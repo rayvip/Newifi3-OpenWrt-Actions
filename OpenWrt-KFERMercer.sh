@@ -20,12 +20,12 @@ cat feeds.conf.default
 
 # 添加第三方软件包
 #git clone https://github.com/gbaoye/openwrt-packages package/openwrt-packages
-#git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
+git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 #git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge
-git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
+#git clone https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+#git clone https://github.com/frainzy1477/luci-app-clash package/luci-app-clash
 #git clone https://github.com/kenzok8/openwrt-packages/tree/master/luci-app-openclash package/luci-app-openclash
 
 # 下载自定义软件
@@ -172,58 +172,35 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 #CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-CONFIG_PACKAGE_luci-app-clash=y
+#CONFIG_PACKAGE_luci-app-clash=y
 #CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 #CONFIG_PACKAGE_luci-app-eqos=y #IP限速
-CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
+#CONFIG_PACKAGE_luci-app-adguardhome=y #ADguardhome
 #CONFIG_PACKAGE_AdGuardHome=y
 EOF
 
 # ShadowsocksR插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-ssr-plus=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=n
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-ssr-plus=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=n
+#CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=n
+#EOF
 
 # Passwall插件:
-#cat >> .config <<EOF
-#CONFIG_PACKAGE_luci-app-passwall=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ipt2socks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ChinaDNS_NG=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_v2ray-plugin=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_simple-obfs=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Brook=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_kcptun=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_haproxy=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_dns2socks=y
-#CONFIG_PACKAGE_luci-app-passwall_INCLUDE_pdnsd=y
-#CONFIG_PACKAGE_kcptun-client=y
-#CONFIG_PACKAGE_chinadns-ng=y
-#CONFIG_PACKAGE_haproxy=y
-#CONFIG_PACKAGE_v2ray=y
-#CONFIG_PACKAGE_v2ray-plugin=y
-#CONFIG_PACKAGE_simple-obfs=y
-#CONFIG_PACKAGE_trojan=y
-#CONFIG_PACKAGE_trojan-go=y
-#CONFIG_PACKAGE_brook=y
-#CONFIG_PACKAGE_ipt2socks=y
-#CONFIG_PACKAGE_shadowsocks-libev-config=y
-#CONFIG_PACKAGE_shadowsocks-libev-ss-local=y
-#CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-#CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-#CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-#CONFIG_PACKAGE_pdnsd-alt=y
-#CONFIG_PACKAGE_dns2socks=y
-#EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_https-dns-proxy=y
+CONFIG_PACKAGE_naiveproxy=y
+CONFIG_PACKAGE_kcptun-client=y
+CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_brook=y
+CONFIG_PACKAGE_trojan-go=y
+CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
+EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
