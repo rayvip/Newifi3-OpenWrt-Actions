@@ -40,7 +40,7 @@ git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
 #rm -rf package/openwrt-packages/luci-app-clash && svn co https://github.com/frainzy1477/luci-app-clash package/openwrt-packages/luci-app-clash
 
 # 添加passwall依赖库
-git clone https://github.com/kenzok8/small package/small
+#git clone https://github.com/kenzok8/small package/small
 #svn co https://github.com/Lienol/openwrt-package/tree/master/package package/small
 
 # 替换更新haproxy默认版本
@@ -191,16 +191,16 @@ EOF
 #EOF
 
 # Passwall插件:
-cat >> .config <<EOF
-CONFIG_PACKAGE_luci-app-passwall=y
-CONFIG_PACKAGE_https-dns-proxy=y
-CONFIG_PACKAGE_naiveproxy=y
-CONFIG_PACKAGE_kcptun-client=y
-CONFIG_PACKAGE_chinadns-ng=y
-CONFIG_PACKAGE_brook=y
-CONFIG_PACKAGE_trojan-go=y
-CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
-EOF
+#cat >> .config <<EOF
+#CONFIG_PACKAGE_luci-app-passwall=y
+#CONFIG_PACKAGE_https-dns-proxy=y
+#CONFIG_PACKAGE_naiveproxy=y
+#CONFIG_PACKAGE_kcptun-client=y
+#CONFIG_PACKAGE_chinadns-ng=y
+#CONFIG_PACKAGE_brook=y
+#CONFIG_PACKAGE_trojan-go=y
+#CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
+#EOF
 
 # 常用LuCI插件:
 cat >> .config <<EOF
